@@ -27,24 +27,24 @@ export const DIET_TYPES = {
 
 export const MENU_WEEKS = {
   "semana-1": {
-    label: "Semana 1 (03 al 07 Nov)",
-    startDate: "2026-11-03",
-    endDate: "2026-11-07"
+    label: "Semana 1 (02 al 06 Nov)",
+    startDate: "2026-11-02",
+    endDate: "2026-11-06"
   },
   "semana-2": {
-    label: "Semana 2 (10 al 14 Nov)",
-    startDate: "2026-11-10",
-    endDate: "2026-11-14"
+    label: "Semana 2 (9 al 13 Nov)",
+    startDate: "2026-11-09",
+    endDate: "2026-11-13"
   },
   "semana-3": {
-    label: "Semana 3 (17 al 21 Nov)",
-    startDate: "2026-11-17",
-    endDate: "2026-11-21"
+    label: "Semana 3 (16 al 20 Nov)",
+    startDate: "2026-11-16",
+    endDate: "2026-11-20"
   },
   "semana-4": {
-    label: "Semana 4 (24 al 28 Nov)",
-    startDate: "2026-11-24",
-    endDate: "2026-11-28"
+    label: "Semana 4 (23 al 27 Nov)",
+    startDate: "2026-11-23",
+    endDate: "2026-11-27"
   }
 };
 
@@ -52,8 +52,8 @@ export const WEEKLY_MENUS = {
   "semana-3": [
     {
       day: "Lunes",
-      dateStr: "17 de Noviembre",
-      dateKey: "2026-11-17",
+      dateStr: "16 de Noviembre",
+      dateKey: "2026-11-16",
       platos: {
         tradicional: {
           sopa: "Crema de Zapallo y Jengibre",
@@ -83,8 +83,8 @@ export const WEEKLY_MENUS = {
     },
     {
       day: "Martes",
-      dateStr: "18 de Noviembre",
-      dateKey: "2026-11-18",
+      dateStr: "17 de Noviembre",
+      dateKey: "2026-11-17",
       platos: {
         tradicional: {
           sopa: "Sopa minestrone campesina con fideos",
@@ -114,8 +114,8 @@ export const WEEKLY_MENUS = {
     },
     {
       day: "Miércoles",
-      dateStr: "19 de Noviembre",
-      dateKey: "2026-11-19",
+      dateStr: "18 de Noviembre",
+      dateKey: "2026-11-18",
       platos: {
         tradicional: {
           sopa: "Crema de verduras del huerto",
@@ -145,8 +145,8 @@ export const WEEKLY_MENUS = {
     },
     {
       day: "Jueves",
-      dateStr: "20 de Noviembre",
-      dateKey: "2026-11-20",
+      dateStr: "19 de Noviembre",
+      dateKey: "2026-11-19",
       platos: {
         tradicional: {
           sopa: "Crema de arvejas con crutones",
@@ -176,8 +176,8 @@ export const WEEKLY_MENUS = {
     },
     {
       day: "Viernes",
-      dateStr: "21 de Noviembre",
-      dateKey: "2026-11-21",
+      dateStr: "20 de Noviembre",
+      dateKey: "2026-11-20",
       platos: {
         tradicional: {
           sopa: "Consomé de ave con huevo batido",
@@ -211,7 +211,7 @@ export const WEEKLY_MENUS = {
 // Generar menus para las otras semanas de Noviembre con pequeñas variaciones
 ["semana-1", "semana-2", "semana-4"].forEach(semKey => {
   WEEKLY_MENUS[semKey] = WEEKLY_MENUS["semana-3"].map((item, idx) => {
-    let dayNum = semKey === "semana-1" ? (3 + idx) : (semKey === "semana-2" ? (10 + idx) : (24 + idx));
+    let dayNum = semKey === "semana-1" ? (2 + idx) : (semKey === "semana-2" ? (9 + idx) : (23 + idx));
     const dayPadded = dayNum < 10 ? `0${dayNum}` : `${dayNum}`;
     return {
       ...item,
@@ -225,7 +225,7 @@ export const INITIAL_RESERVATIONS = [
   {
     id: "RES-2026-8941",
     date: "2026-11-04",
-    dateFormatted: "Martes 04 Nov, 2026",
+    dateFormatted: "Martes 03 Nov, 2026",
     menuType: "tradicional",
     menuName: "Carne mechada con puré rústico",
     campus: "Campus San Joaquín",
@@ -236,7 +236,7 @@ export const INITIAL_RESERVATIONS = [
   {
     id: "RES-2026-9012",
     date: "2026-11-06",
-    dateFormatted: "Jueves 06 Nov, 2026",
+    dateFormatted: "Jueves 05 Nov, 2026",
     menuType: "vegetariano",
     menuName: "Guiso de lentejas rojas al curry suave",
     campus: "Campus San Joaquín",
@@ -247,7 +247,7 @@ export const INITIAL_RESERVATIONS = [
   {
     id: "RES-2026-9150",
     date: "2026-11-12",
-    dateFormatted: "Miércoles 12 Nov, 2026",
+    dateFormatted: "Miércoles 11 Nov, 2026",
     menuType: "hipocalorico",
     menuName: "Hamburguesa magra de pavo con arroz integral",
     campus: "Campus San Joaquín",

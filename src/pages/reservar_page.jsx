@@ -380,16 +380,6 @@ const ReservarPage = () => {
                               <span>Hipocalórico</span>
                             </label>
                           </div>
-
-                          <div className="special-notes-input">
-                            <input
-                              type="text"
-                              className="notes-input"
-                              placeholder="Observaciones dietarias o alergias (opcional)..."
-                              value={config.notes}
-                              onChange={e => updateDayNotes(dateKey, e.target.value)}
-                            />
-                          </div>
                         </div>
                       </div>
                     );

@@ -97,7 +97,6 @@ const ReservasPage = () => {
                   <th>Tipo de Menú</th>
                   <th>Plato Asignado</th>
                   <th>Sede / Casino</th>
-                  <th>Observaciones / Alergias</th>
                   <th>Estado</th>
                   <th className="text-right">Acciones</th>
                 </tr>
@@ -127,16 +126,6 @@ const ReservasPage = () => {
                         <MaterialIcon name="location_on" className="cell-icon-xs" />
                         {res.campus}
                       </span>
-                    </td>
-                    <td>
-                      {res.notes ? (
-                        <span className="notes-pill" title={res.notes}>
-                          <MaterialIcon name="warning" className="pill-icon-xs" />
-                          {res.notes}
-                        </span>
-                      ) : (
-                        <span className="text-muted text-sm">Sin observaciones</span>
-                      )}
                     </td>
                     <td>
                       {getStatusBadge(res.status)}
