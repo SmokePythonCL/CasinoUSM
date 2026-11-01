@@ -13,7 +13,7 @@ module.exports = (_, argv) => ({
       filename: '[name].[contenthash].css'
     }),
     new HtmlWebpackPlugin({
-      title: 'Interfaz energética'
+      title: 'Casino USM - Plataforma de Reservas y Minuta Institucional'
     })
   ],
   resolve: {
@@ -37,7 +37,7 @@ module.exports = (_, argv) => ({
           : ['style-loader', 'css-loader', 'sass-loader']
       },
       {
-        test: /\.(png|jpe?g|gif)$/i,
+        test: /\.(png|jpe?g|gif|svg)$/i,
         use: [
           {
             loader: 'file-loader'
