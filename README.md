@@ -52,8 +52,8 @@ Adicionalmente, se incluye la vista **Mis Consumos** (`/mis-consumos`) para audi
 
 1. Clonar el repositorio:
 ```bash
-git clone <URL_DEL_REPOSITORIO>
-cd "Casino USM"
+git clone https://github.com/SmokePythonCL/CasinoUSM.git
+cd CasinoUSM
 ```
 
 2. Instalar dependencias:
