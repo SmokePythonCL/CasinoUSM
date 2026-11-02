@@ -37,6 +37,38 @@ const NOVEMBER_DAYS = [
   { dayNumber: 30, isWeekend: false, dateKey: "2026-11-30", dayOfWeek: "Lun" }
 ];
 
+// Busca el plato correspondiente a una fecha y tipo de menú
+const getMenuForDate = (dateKey, menuType) => {
+  for (const sem of Object.values(WEEKLY_MENUS)) {
+    const foundDay = sem.find(s => s.dateKey === dateKey);
+    if (foundDay && foundDay.platos[menuType]) {
+      return foundDay.platos[menuType];
+    }
+  }
+  return null;
+};
+
+const MENU_DETAIL_KEYS = [
+  { key: "sopa", label: "Sopa" },
+  { key: "fondo", label: "Fondo" },
+  { key: "ensalada", label: "Ensalada" },
+  { key: "postre", label: "Postre" }
+];
+
+const DIET_LABELS = {
+  tradicional: "Tradicional",
+  vegetariano: "Vegetariano",
+  hipocalorico: "Hipocalórico"
+};
+
+const DIET_BOX_MODIFIER = {
+  tradicional: "menu-detail-box--trad",
+  vegetariano: "menu-detail-box--veg",
+  hipocalorico: "menu-detail-box--hipo"
+};
+
+
+
 const ReservarPage = () => {
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
@@ -380,6 +412,39 @@ const ReservarPage = () => {
                               <span>Hipocalórico</span>
                             </label>
                           </div>
+                            {(() => {
+                              const plato = getMenuForDate(dateKey, config.menuType);
+                              return (
+                                <div className={`menu-detail-box ${DIET_BOX_MODIFIER[config.menuType] || ''}`}>
+                                  <div className="menu-detail-title">
+                                    <MaterialIcon name="restaurant_menu" className="menu-detail-icon" />
+                                    <span>
+                                      {plato
+                                        ? `Almuerzo ${DIET_LABELS[config.menuType] || ''} de este día`
+                                        : `Almuerzo ${DIET_LABELS[config.menuType] || ''} — menú por confirmar`}
+                                    </span>
+                                  </div>
+                                  {plato ? (
+                                    <dl className="menu-detail-items">
+                                      {MENU_DETAIL_KEYS.map(({ key, label }) => (
+                                        <div key={key} className="menu-detail-row">
+                                          <dt>{label}:</dt>
+                                          <dd>{plato[key]}</dd>
+                                        </div>
+                                      ))}
+                                      <div className="menu-detail-row menu-detail-row--meta">
+                                        <dt>Calorías:</dt>
+                                        <dd>{plato.calorias}</dd>
+                                      </div>
+                                    </dl>
+                                  ) : (
+                                    <p className="menu-detail-empty">
+                                      El casino informará los platos de esta fecha más adelante.
+                                    </p>
+                                  )}
+                                </div>
+                              );
+                            })()}
                         </div>
                       </div>
                     );
