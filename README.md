@@ -10,9 +10,7 @@ Desarrollado bajo principios de **Lean UX**, las directrices de Jakob Nielsen y 
 
 * **Kran Olivares Rojas** - 202373542-6
 * **Alejandro Ortiz Tapia** - 202373572-8
-* **Cristóbal Carrión Meli** - 202373598-1
 * **Sergio Cárcamo Naranjo** - 202273512-0
-* **Balduino Díaz** - 202373626-0
 
 ---
 
